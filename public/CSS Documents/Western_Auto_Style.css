@@ -1,0 +1,51 @@
+html, body {
+    background-image: url("/Pictures/Western_Auto_Wallpaper.jpg");
+    background-size: 1280px;
+}
+
+@font-face {
+    font-family: 'Nokia Pure Text';
+    url('/Fonts/Nokia Pure Text/Nokia Pure Text.ttf')
+}
+
+html, body, h1, h2, h3, h4, h5, h6, p, i, a, td, tr, button {
+    font-family: "Nokia Pure Text";
+}
+
+.card1 {
+    height: 1150px !important;
+    width: 550px;
+    top: 100px;
+    left: 370px;
+    border-radius: 20px;
+    margin-right: 0;
+    font-family: "Nokia Pure Text";
+}
+
+.heading1 {
+    top: 0px;
+    left: 150px;
+}
+
+.table>:not(caption)>*>* {
+    border: hidden;
+}
+
+.button1 {
+    top: 10px;
+    left: 210px;
+}
+
+.card2 {
+    height: 300px !important;
+    width: 500px;
+    top: 180px;
+    left: 400px;
+}
+
+.button2 {
+    top: 90px;
+    left: 205px;
+}
+
+
