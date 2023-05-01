@@ -13,9 +13,9 @@ html, body, h1, h2, h3, h4, h5, h6, p, i, a, td, tr, button {
 }
 
 .card1 {
-    height: 1150px !important;
+    height: 500px !important;
     width: 550px;
-    top: 100px;
+    top: 90px;
     left: 370px;
     border-radius: 20px;
     margin-right: 0;

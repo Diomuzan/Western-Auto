@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 30. Apr 2023 um 22:45
+-- Erstellungszeit: 01. Mai 2023 um 23:39
 -- Server-Version: 10.4.28-MariaDB
 -- PHP-Version: 8.2.4
 
@@ -82,14 +82,9 @@ CREATE TABLE `trucks` (
 INSERT INTO `trucks` (`id`, `brand`, `model`, `fuel_type`, `price`) VALUES
 (1, 'Mercedes-Benz', 'Actros', 'Diesel', '€260.000,00'),
 (2, 'Volvo', 'FH 500', 'Diesel', '€140.000,00'),
-(3, 'DAF', 'XG+', 'Diesel', '€130.000,00'),
-(4, 'Ford', 'F-Max', 'Diesel', '€200.000,00'),
-(5, 'MAN', 'E Full Electric', 'Electric', '€159.900,000'),
-(6, 'Nikola ', 'Tre', 'Electric', '€224.675,00'),
-(7, 'Tesla', 'Semi', 'Electric', '€161.766,00'),
-(8, 'Freightliner', 'eCascadia', 'Electric', '€124.919,30'),
-(9, 'Fuso', 'eCanter', 'Electric', '€77.620,00'),
-(10, 'BYD', 'T9', 'Electric', '€100.947,28');
+(3, 'Freightliner', 'eCascadia', 'Electric', '€124.919,30'),
+(4, 'BYD', 'T9', 'Electric', '€100.947,28'),
+(5, 'Nikola ', 'Tre', 'Electric', '€224.675,00');
 
 --
 -- Indizes der exportierten Tabellen
