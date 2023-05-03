@@ -18,9 +18,9 @@
                    <td>{{ truck.brand }}</td>
                     <td>{{ truck.model }}</td>
                     <td>
-                    <a href= "{{ path('Detail') }}"><button type="button" class="btn btn-primary">Detail</button></a>
-                    <a href= "{{ path('Edit') }}"> <button type="button" class="btn btn-warning text-light">Edit</button></a>
-                    <a href= "{{ path('Delete') }}"><button type="button" class="btn btn-danger">Delete</button></a>
+                    <a href= "{{ path('Detail', {'id': truck.id}) }}"><button type="button" class="btn btn-primary">Detail</button></a>
+                    <a href= "{{ path('Edit', {'id': truck.id}) }}"> <button type="button" class="btn btn-warning text-light">Edit</button></a>
+                    <a href= "{{ path('Delete', {'id': truck.id}) }}"><button type="button" class="btn btn-danger">Delete</button></a>
                 </tbody>
                 </td>
                     <tr>

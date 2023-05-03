@@ -52,10 +52,26 @@ class WesternAutoController extends AbstractController
         return $this->render('Western_Auto_Add.html.twig', ['form' => $form->createView()]);
     }
 
-    #[Route('/WesternAuto/Edit', name: 'Edit')]
-    public function edit(): Response {
+    #[Route('/WesternAuto/Edit/{id}', name: 'Edit')]
+    public function edit(Request $request, int $id, EntityManagerInterface $entityManager): Response {
 
-        return $this->render('Western_Auto_Edit.html.twig');
+
+        $truck = $entityManager->getRepository(Trucks::class)->find($id);
+
+        if (!$truck) {
+            throw $this->createNotFoundException('Truck not found');
+        }
+
+        $form = $this->createForm(AddTruckType::class, $truck);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+
+            return $this->redirectToRoute('Home');
+        }
+
+        return $this->render('Western_Auto_Edit.html.twig', ['form' => $form->createView()]);
     }
 
     #[Route('/WesternAuto/Delete', name: 'Delete')]
