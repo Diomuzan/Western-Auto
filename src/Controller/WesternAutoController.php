@@ -74,9 +74,18 @@ class WesternAutoController extends AbstractController
         return $this->render('Western_Auto_Edit.html.twig', ['form' => $form->createView()]);
     }
 
-    #[Route('/WesternAuto/Delete', name: 'Delete')]
-    public function delete(): Response {
+    #[Route('/WesternAuto/Delete/{id}', name: 'Delete')]
+    public function deleteAction($id, EntityManagerInterface $entityManager) {
 
-        return $this->render('Western_Auto_Delete.html.twig');
+        $truck = $entityManager->getRepository(Trucks::class)->find($id);
+
+        if (!$truck) {
+            throw $this->createNotFoundException('Truck not found');
+        }
+
+        $entityManager->remove($truck);
+        $entityManager->flush();
+
+      return $this->redirectToRoute('Home');
     }
 }
