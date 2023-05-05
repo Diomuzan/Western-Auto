@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Trucks;
 use App\Form\AddTruckType;
+use App\Repository\TrucksRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,14 +27,11 @@ class WesternAutoController extends AbstractController
         return $this->render('Western_Auto_Home.html.twig', ['trucks' => $trucks]);
     }
 
-    #[Route('/WesternAuto/Detail', name: 'Detail')]
-    public function detail(EntityManagerInterface $entityManager, int $id): Response {
+    #[Route('/WesternAuto/Detail/{id}', name: 'Detail')]
+    public function detail(TrucksRepository $trucksRepository, $id): Response {
 
-
-
-        return $this->render('Western_Auto_Detail_html.twig');
+        return $this->render('Western_Auto_Detail.html.twig');
     }
-
 
     #[Route('/WesternAuto/Add', name: 'Add')]
     public function add(Request $request, EntityManagerInterface $entityManager): Response {
@@ -55,7 +53,6 @@ class WesternAutoController extends AbstractController
 
     #[Route('/WesternAuto/Edit/{id}', name: 'Edit')]
     public function edit(Request $request, int $id, EntityManagerInterface $entityManager): Response {
-
 
         $truck = $entityManager->getRepository(Trucks::class)->find($id);
 
@@ -87,6 +84,6 @@ class WesternAutoController extends AbstractController
         $entityManager->remove($truck);
         $entityManager->flush();
 
-      return $this->redirectToRoute('Home');
+        return $this->redirectToRoute('Home');
     }
 }

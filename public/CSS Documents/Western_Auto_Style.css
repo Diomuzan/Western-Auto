@@ -53,11 +53,6 @@ left: 187px;
     left: 140px;
 }
 
-.button3 {
-    top: 142px;
-    left: 230px;
-}
-
 .formRow1 {
     top: 38px;
     left: 36px;
@@ -105,5 +100,25 @@ left: 187px;
     left: 210px;
     width: 400px;
 }
+
+.card3 {
+    height: 250px !important;
+    width: 500px;
+    top: 190px;
+    left: 400px;
+}
+
+.heading3 {
+    top: 15px;
+    left: 187px;
+}
+
+.button3 {
+    top: 50px;
+    left: 200px;
+}
+
+
+
 
 

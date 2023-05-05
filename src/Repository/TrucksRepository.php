@@ -22,13 +22,13 @@ class TrucksRepository extends ServiceEntityRepository
     }
 
     public function save(Trucks $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->persist($entity);
+{
+    $this->getEntityManager()->persist($entity);
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
+    if ($flush) {
+        $this->getEntityManager()->flush();
     }
+}
 
     public function remove(Trucks $entity, bool $flush = false): void
     {
