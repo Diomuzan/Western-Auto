@@ -29,7 +29,7 @@ class WesternAutoController extends AbstractController
     #[Route('/WesternAuto/Detail', name: 'Detail')]
     public function detail(EntityManagerInterface $entityManager, int $id): Response {
 
-        $truckDetail = $entityManager->getRepository(Trucks::class)->find($id);
+
 
         return $this->render('Western_Auto_Detail_html.twig');
     }
@@ -45,6 +45,7 @@ class WesternAutoController extends AbstractController
             $addTruck = $form->getData();
             $entityManager->persist($addTruck);
             $entityManager->flush();
+            $this->addFlash('success', 'The truck is added successfully!');
             return $this->redirectToRoute('Home');
         } else {
             $this->addFlash('error', 'Oops, something went wrong. Please check your input and try again.');
