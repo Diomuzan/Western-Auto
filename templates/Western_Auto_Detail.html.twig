@@ -12,16 +12,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for truck in trucks %}
                 <tr>
-                    <td>{{ truck.fuel_type }}</td>
+                    <td>{{ truck.FuelType }}</td>
                     <td>{{ truck.price }}</td>
                 </tr>
                 </tbody>
-                {% endfor %}
             </table>
 
-            <a href="{{ path('Home') }}"><button type="button" class="button3 btn btn-secondary position-relative">Return</button></a>
+            <a href="{{ path('Home') }}"><button type="button" class="button4 btn btn-secondary position-relative">Return</button></a>
         </div>
     </div>
 

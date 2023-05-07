@@ -28,9 +28,11 @@ class WesternAutoController extends AbstractController
     }
 
     #[Route('/WesternAuto/Detail/{id}', name: 'Detail')]
-    public function detail(TrucksRepository $trucksRepository, $id): Response {
+    public function detail(EntityManagerInterface $entityManager, int $id): Response {
 
-        return $this->render('Western_Auto_Detail.html.twig');
+        $truck = $entityManager->getRepository(Trucks::class)->find($id);
+
+        return $this->render('Western_Auto_Detail.html.twig', ['truck' => $truck]);
     }
 
     #[Route('/WesternAuto/Add', name: 'Add')]

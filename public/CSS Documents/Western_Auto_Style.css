@@ -101,6 +101,11 @@ left: 187px;
     width: 400px;
 }
 
+.button3 {
+    top: 142px;
+    left: 230px;
+}
+
 .card3 {
     height: 250px !important;
     width: 500px;
@@ -113,8 +118,8 @@ left: 187px;
     left: 187px;
 }
 
-.button3 {
-    top: 50px;
+.button4 {
+    top: 20px !important;
     left: 200px;
 }
 
