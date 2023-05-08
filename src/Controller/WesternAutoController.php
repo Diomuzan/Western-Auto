@@ -75,7 +75,7 @@ class WesternAutoController extends AbstractController
     }
 
     #[Route('/WesternAuto/Delete/{id}', name: 'Delete')]
-    public function deleteAction($id, EntityManagerInterface $entityManager) {
+    public function delete($id, EntityManagerInterface $entityManager) {
 
         $truck = $entityManager->getRepository(Trucks::class)->find($id);
 
